@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import com.company.fx.RentTableView?>
+<?import com.company.fx.SaleTableView?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0"
+      prefWidth="836.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.company.HomePage">
+    <TabPane prefHeight="497.0" prefWidth="836.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <Tab closable="false" text="For Rent">
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="2">
+                <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                </padding>
+                <HBox prefHeight="0.0" prefWidth="836.0">
+                    <TextField fx:id="rentSearchTextField" prefHeight="25.0" prefWidth="233.0"
+                               promptText="ID ile ara"/>
+                    <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS"/>
+                    <Button mnemonicParsing="false"
+                            onAction="#rentImportButtonOnActionListener" prefWidth="126.0"
+                            text="Dosya Yükle"/>
+                </HBox>
+                <RentTableView VBox.vgrow="ALWAYS" fx:id="rentTableView"/>
+            </VBox>
+        </Tab>
+        <Tab text="For Sale">
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="2">
+                <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                </padding>
+                <HBox prefHeight="0.0" prefWidth="836.0">
+                    <TextField fx:id="saleSearchTextField" prefWidth="233.0" promptText="ID ile ara"/>
+                    <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS"/>
+                    <Button mnemonicParsing="false"
+                            onAction="#saleImportButtonOnActionListener" prefWidth="126.0"
+                            text="Dosya Yükle"/>
+                </HBox>
+                <SaleTableView VBox.vgrow="ALWAYS" fx:id="saleTableView"/>
+            </VBox>
+        </Tab>
+    </TabPane>
+</VBox>
